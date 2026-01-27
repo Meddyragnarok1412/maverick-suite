@@ -120,7 +120,7 @@
                     <div class="tool-card purple">
                         <div class="tool-icon">&#9881;</div>
                         <h3>MAV RADAR</h3>
-                        <p>Automated scanner. Scans thousands of symbols across stocks, crypto, forex for MAV setups. Discord alerts included.</p>
+                        <p>Automated scanner accessed via Discord. Scans thousands of symbols across stocks, crypto, forex for MAV setups.</p>
                         <a href="#radar-overview" class="tool-link">View Docs &rarr;</a>
                     </div>
                 </div>
@@ -188,7 +188,7 @@
                         <span class="step-num">3</span>
                         <div class="step-content">
                             <h4>Search for MAV</h4>
-                            <p>Search "MAV 2.0" or "Slingshot Pro" in the indicator search. Look for indicators by <code>TheBastian999</code>.</p>
+                            <p>Search "MAV 2.0" or "Slingshot Pro" in the indicator search. Look for indicators by <code>Meddymarkusvanhala</code>.</p>
                         </div>
                     </div>
                     <div class="step">
@@ -200,28 +200,15 @@
                     </div>
                 </div>
 
-                <h2>MAV RADAR (Python)</h2>
-                <p>MAV RADAR is a Python-based scanner that runs locally or on a server.</p>
+                <h2>MAV RADAR (Discord)</h2>
+                <p>MAV RADAR runs on a dedicated server and is accessed through Discord bot commands. No local installation required.</p>
 
-                <div class="code-block">
-                    <div class="code-header">
-                        <span>Requirements</span>
+                <div class="callout callout-info">
+                    <div class="callout-icon">i</div>
+                    <div class="callout-content">
+                        <strong>Access via Discord</strong>
+                        <p>Join the Discord server to use MAV RADAR. All scans are run through bot commands and results are delivered directly to Discord.</p>
                     </div>
-                    <pre><code>pip install yfinance pandas numpy requests tqdm tabulate discord.py</code></pre>
-                </div>
-
-                <div class="code-block">
-                    <div class="code-header">
-                        <span>Run a Scan</span>
-                    </div>
-                    <pre><code># Test scan (first 50 tickers)
-python MAV_RADAR_v9.py --test
-
-# Full scan (all configured assets)
-python MAV_RADAR_v9.py --full
-
-# Quick scan with parameters
-python quick_scan.py 1d LONG stocks</code></pre>
                 </div>
             </section>
 
@@ -355,7 +342,7 @@ python quick_scan.py 1d LONG stocks</code></pre>
                             <td><span class="badge purple">MAV-HTF</span></td>
                             <td>Bias</td>
                             <td>Daily+ ONLY</td>
-                            <td>Macro trend, very smooth, directional bias</td>
+                            <td>Macro trend, fast reaction, directional bias</td>
                         </tr>
                     </tbody>
                 </table>
@@ -471,13 +458,13 @@ python quick_scan.py 1d LONG stocks</code></pre>
                     <h1>MAV-HTF (Bias)</h1>
                 </div>
 
-                <p class="lead">MAV-HTF provides macro directional bias. Use it on Daily+ timeframes only to determine whether you should be looking for longs or shorts.</p>
+                <p class="lead">MAV-HTF provides macro directional bias. It's a fast, reactive oscillator - use it on Daily+ timeframes only to determine whether you should be looking for longs or shorts.</p>
 
                 <div class="callout callout-warning">
                     <div class="callout-icon">!</div>
                     <div class="callout-content">
                         <strong>Daily+ ONLY</strong>
-                        <p>MAV-HTF is designed for Daily and higher timeframes. It's too fast/noisy for intraday charts. Use MAV-T or MAV-E for lower timeframes.</p>
+                        <p>MAV-HTF is fast and reactive by design. On lower timeframes it becomes too noisy. Use MAV-T or MAV-E for intraday charts.</p>
                     </div>
                 </div>
 
@@ -504,12 +491,17 @@ python quick_scan.py 1d LONG stocks</code></pre>
 
                 <div class="visual-box">
                     <svg viewBox="0 0 400 120" class="mav-wave">
-                        <path d="M20 100 L120 50 L220 70 L320 25 L380 35" stroke="#8b5cf6" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
-                        <circle cx="120" cy="50" r="6" fill="#8b5cf6"/>
-                        <circle cx="220" cy="70" r="6" fill="#8b5cf6"/>
-                        <circle cx="320" cy="25" r="6" fill="#8b5cf6"/>
+                        <path d="M20 90 L60 40 L100 70 L140 30 L180 55 L220 25 L260 60 L300 35 L340 50 L380 20" stroke="#8b5cf6" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+                        <circle cx="60" cy="40" r="5" fill="#8b5cf6"/>
+                        <circle cx="100" cy="70" r="5" fill="#8b5cf6"/>
+                        <circle cx="140" cy="30" r="5" fill="#8b5cf6"/>
+                        <circle cx="180" cy="55" r="5" fill="#8b5cf6"/>
+                        <circle cx="220" cy="25" r="5" fill="#8b5cf6"/>
+                        <circle cx="260" cy="60" r="5" fill="#8b5cf6"/>
+                        <circle cx="300" cy="35" r="5" fill="#8b5cf6"/>
+                        <circle cx="340" cy="50" r="5" fill="#8b5cf6"/>
                     </svg>
-                    <p class="visual-caption">MAV-HTF: Smooth macro wave for directional bias (Daily+ only)</p>
+                    <p class="visual-caption">MAV-HTF: Fast reaction for directional bias (Daily+ only - too fast for LTF)</p>
                 </div>
             </section>
 
@@ -522,72 +514,21 @@ python quick_scan.py 1d LONG stocks</code></pre>
 
                 <p class="lead">MAV uses fixed, optimized settings. Do not modify these values - they have been carefully tuned for optimal performance.</p>
 
-                <div class="callout callout-warning">
-                    <div class="callout-icon">!</div>
+
+                <h2>Optimized Settings</h2>
+
+                <p>MAV indicators use proprietary, optimized settings that have been carefully tuned for optimal performance. These settings are built into the indicators - no configuration required.</p>
+
+                <div class="callout callout-gold">
+                    <div class="callout-icon">&#9670;</div>
                     <div class="callout-content">
-                        <strong>Do Not Modify</strong>
-                        <p>These settings are intentionally fixed. Do not add timeframe-adaptive smoothing, scaling, or any other "improvements" to these oscillators.</p>
+                        <strong>Ready to Use</strong>
+                        <p>Simply add the indicator to your chart. All parameters are pre-configured for best results.</p>
                     </div>
                 </div>
-
-                <h2>Fixed Parameters</h2>
-
-                <table class="doc-table">
-                    <thead>
-                        <tr>
-                            <th>Indicator</th>
-                            <th>Parameter</th>
-                            <th>Value</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><span class="badge blue">MAV</span></td>
-                            <td>COG_LENGTH</td>
-                            <td><code>8</code></td>
-                        </tr>
-                        <tr>
-                            <td><span class="badge blue">MAV</span></td>
-                            <td>RMA_SMOOTH</td>
-                            <td><code>166</code></td>
-                        </tr>
-                        <tr>
-                            <td><span class="badge gold">BHXL</span></td>
-                            <td>LPPeriod</td>
-                            <td><code>6</code></td>
-                        </tr>
-                        <tr>
-                            <td><span class="badge gold">BHXL</span></td>
-                            <td>ct4</td>
-                            <td><code>0.991</code></td>
-                        </tr>
-                        <tr>
-                            <td><span class="badge purple">BHP2</span></td>
-                            <td>LPPeriod_base</td>
-                            <td><code>3.2</code></td>
-                        </tr>
-                        <tr>
-                            <td><span class="badge purple">BHP2</span></td>
-                            <td>lb</td>
-                            <td><code>157</code></td>
-                        </tr>
-                        <tr>
-                            <td><span class="badge purple">BHP2</span></td>
-                            <td>ct4</td>
-                            <td><code>0.991</code></td>
-                        </tr>
-                    </tbody>
-                </table>
 
                 <h2>Pivot Detection</h2>
-                <p>Pivots are detected using a 3-bar window (1 bar left + current + 1 bar right). A pivot forms when the slope changes direction.</p>
-
-                <div class="code-block">
-                    <div class="code-header">
-                        <span>Pivot Lookback</span>
-                    </div>
-                    <pre><code>MAV_PIVOT_LOOKBACK = 1  // 3-bar pivot window for all oscillators</code></pre>
-                </div>
+                <p>Pivots are automatically detected when the MAV slope changes direction. The indicator marks these pivots for easy structure analysis.</p>
             </section>
 
             <!-- MAV Pivots -->
@@ -832,7 +773,7 @@ python quick_scan.py 1d LONG stocks</code></pre>
                     <h1>Overview</h1>
                 </div>
 
-                <p class="lead">MAV RADAR is an automated scanner that applies the MAV methodology to thousands of symbols across multiple asset classes.</p>
+                <p class="lead">MAV RADAR is an automated scanner hosted on a dedicated server, accessed through Discord bot commands. It applies the MAV methodology to thousands of symbols across multiple asset classes.</p>
 
                 <h2>Capabilities</h2>
 
@@ -874,26 +815,12 @@ python quick_scan.py 1d LONG stocks</code></pre>
                 <h2>MAV Mode (Default)</h2>
                 <p>Pivot detection on the smoothed COG line. This is the recommended mode for clean structure analysis.</p>
 
-                <div class="code-block">
-                    <div class="code-header">
-                        <span>MAV Mode Settings</span>
-                    </div>
-                    <pre><code>SCAN_MODE = "MAV"
-MAV_COG_LENGTH = 8
-MAV_RMA_SMOOTH = 166
-MAV_PIVOT_LOOKBACK = 1  # 3-bar pivot window</code></pre>
-                </div>
+                <p>Uses proprietary MAV oscillator settings for pivot detection. Clean structure analysis with optimized parameters.</p>
 
                 <h2>PRICE Mode</h2>
                 <p>Pivot detection directly on raw price data. More sensitive, more signals. Use for aggressive scanning.</p>
 
-                <div class="code-block">
-                    <div class="code-header">
-                        <span>PRICE Mode Settings</span>
-                    </div>
-                    <pre><code>SCAN_MODE = "PRICE"
-PRICE_PIVOT_LOOKBACK = 3  # 7-bar pivot window (3 left + 3 right)</code></pre>
-                </div>
+                <p>Detects pivots directly on raw price data. More sensitive with more signals - good for aggressive scanning.</p>
 
                 <h2>Trade Directions</h2>
 
@@ -982,24 +909,12 @@ PRICE_PIVOT_LOOKBACK = 3  # 7-bar pivot window (3 left + 3 right)</code></pre>
             <section id="radar-discord" class="doc-section">
                 <div class="section-header">
                     <span class="section-badge">MAV RADAR</span>
-                    <h1>Discord Integration</h1>
+                    <h1>Discord Commands</h1>
                 </div>
 
-                <p class="lead">MAV RADAR can send scan results directly to Discord via webhooks or bot commands.</p>
+                <p class="lead">MAV RADAR is accessed entirely through Discord. Join the server and use bot commands to run scans and receive results.</p>
 
-                <h2>Webhook Setup</h2>
-                <p>Configure webhooks in <code>discord_config.json</code>:</p>
-
-                <div class="code-block">
-                    <div class="code-header">
-                        <span>discord_config.json</span>
-                    </div>
-                    <pre><code>{
-    "webhook_url": "https://discord.com/api/webhooks/..."
-}</code></pre>
-                </div>
-
-                <h2>Bot Commands</h2>
+                <h2>Available Commands</h2>
 
                 <table class="doc-table">
                     <thead>
