@@ -51,8 +51,10 @@
                 <span class="nav-section-title">MAV RADAR</span>
                 <a href="#radar-overview" class="nav-link">Overview</a>
                 <a href="#radar-modes" class="nav-link">Scan Modes</a>
+                <a href="#radar-mtfscan" class="nav-link">MTF Scan</a>
+                <a href="#radar-trinityscan" class="nav-link">Trinity Scan</a>
                 <a href="#radar-scoring" class="nav-link">Scoring System</a>
-                <a href="#radar-discord" class="nav-link">Discord Integration</a>
+                <a href="#radar-discord" class="nav-link">Discord Commands</a>
             </div>
 
             <div class="nav-section">
@@ -120,7 +122,7 @@
                     <div class="tool-card purple">
                         <div class="tool-icon">&#9881;</div>
                         <h3>MAV RADAR</h3>
-                        <p>Automated scanner accessed via Discord. Scans thousands of symbols across stocks, crypto, forex for MAV setups.</p>
+                        <p>Automated scanner via Discord. Single TF, MTF, and Trinity scans across stocks, crypto, forex. With auto-generated charts.</p>
                         <a href="#radar-overview" class="tool-link">View Docs &rarr;</a>
                     </div>
                 </div>
@@ -836,6 +838,148 @@
                 </div>
             </section>
 
+            <!-- MTF Scan -->
+            <section id="radar-mtfscan" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge">MAV RADAR</span>
+                    <h1>MTF Scan</h1>
+                </div>
+
+                <p class="lead">Multi-timeframe scan that analyzes LTF + HTF together, showing you the state matrix across both timeframes for true confluence.</p>
+
+                <h2>Command Format</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>MTF Scan Syntax</span>
+                    </div>
+                    <pre><code>!mtfscan &lt;oscillator&gt; &lt;ltf&gt; &lt;htf&gt; &lt;direction&gt; &lt;assets&gt; &lt;volume&gt;</code></pre>
+                </div>
+
+                <h2>Examples</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>MTF Scan Examples</span>
+                    </div>
+                    <pre><code>!mtfscan MAV 4h 1d LONG crypto 100M
+!mtfscan BHXL 4h 1wk LONG stocks,etfs
+!mtfscan BHP2 1d 1wk SHORT crypto 50M</code></pre>
+                </div>
+
+                <h2>Valid Timeframe Combos</h2>
+                <p>LTF must be lower than HTF:</p>
+                <ul class="doc-list">
+                    <li><strong>4h + 1d</strong> - Intraday entries with daily bias</li>
+                    <li><strong>4h + 1wk</strong> - Intraday entries with weekly bias</li>
+                    <li><strong>1d + 1wk</strong> - Daily entries with weekly bias</li>
+                </ul>
+
+                <h2>Signal Strength</h2>
+                <p>MTF Scan ranks signals from strongest to weakest:</p>
+
+                <table class="doc-table">
+                    <thead>
+                        <tr>
+                            <th>Strength</th>
+                            <th>Signal Type</th>
+                            <th>Meaning</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge gold">+++++</span></td>
+                            <td>Multi-TF Breakout</td>
+                            <td>Both LTF and HTF breaking together</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge gold">++++</span></td>
+                            <td>HTF Alignment / LTF Pullback</td>
+                            <td>HTF trending, LTF pullback entry</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge blue">+++</span></td>
+                            <td>Dual Structure / Single TF</td>
+                            <td>Both building or one TF only</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge purple">++</span></td>
+                            <td>Counter-trend / HTF Pullback</td>
+                            <td>Against HTF or HTF retracing</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge purple">+</span></td>
+                            <td>Deep Pullback</td>
+                            <td>Single TF retrace only</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Trinity Scan -->
+            <section id="radar-trinityscan" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge">MAV RADAR</span>
+                    <h1>Trinity Scan</h1>
+                </div>
+
+                <p class="lead">The ultimate 3-timeframe scan. LTF for entries, MTF for structure, and Bias TF for directional filter. Only shows results where the bias slope confirms direction.</p>
+
+                <div class="callout callout-gold">
+                    <div class="callout-icon">&#9670;</div>
+                    <div class="callout-content">
+                        <strong>Bias Filter</strong>
+                        <p>Trinity Scan automatically filters results by the Bias TF pivot slope. LONG scans require positive slope (uptrend). SHORT scans require negative slope (downtrend).</p>
+                    </div>
+                </div>
+
+                <h2>Command Format</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>Trinity Scan Syntax</span>
+                    </div>
+                    <pre><code>!trinityscan &lt;oscillator&gt; &lt;ltf&gt; &lt;mtf&gt; &lt;bias&gt; &lt;direction&gt; &lt;assets&gt; &lt;volume&gt;</code></pre>
+                </div>
+
+                <h2>Examples</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>Trinity Scan Examples</span>
+                    </div>
+                    <pre><code>!trinityscan MAV 4h 1d 1wk LONG stocks,etfs
+!trinityscan BHXL 4h 1d 1wk LONG crypto
+!trinityscan BHP2 1h 4h 1d SHORT stocks,crypto 50M</code></pre>
+                </div>
+
+                <h2>Valid Timeframe Combos</h2>
+                <p>Must be in order: LTF &lt; MTF &lt; Bias</p>
+                <ul class="doc-list">
+                    <li><strong>1h + 4h + 1d</strong> - Scalp entries, intraday structure, daily bias</li>
+                    <li><strong>1h + 4h + 1wk</strong> - Scalp entries, intraday structure, weekly bias</li>
+                    <li><strong>4h + 1d + 1wk</strong> - Swing entries, daily structure, weekly bias</li>
+                </ul>
+
+                <h2>The Trinity Framework</h2>
+
+                <div class="mtf-hierarchy">
+                    <div class="mtf-level htf">
+                        <h4>Bias TF (1wk)</h4>
+                        <p>Directional filter. Slope must confirm trade direction.</p>
+                    </div>
+                    <div class="mtf-arrow">&darr;</div>
+                    <div class="mtf-level structure">
+                        <h4>MTF (1d)</h4>
+                        <p>Structure analysis. Pivot sequences and breaks.</p>
+                    </div>
+                    <div class="mtf-arrow">&darr;</div>
+                    <div class="mtf-level entry">
+                        <h4>LTF (4h)</h4>
+                        <p>Entry timing. Precise pullback entries.</p>
+                    </div>
+                </div>
+
+                <h2>Charts Output</h2>
+                <p>Trinity Scan generates <strong>9 charts</strong> for the top 3 results - each result gets a chart on all 3 timeframes for complete visual confirmation.</p>
+            </section>
+
             <!-- RADAR Scoring -->
             <section id="radar-scoring" class="doc-section">
                 <div class="section-header">
@@ -926,19 +1070,15 @@
                     <tbody>
                         <tr>
                             <td><code>!scan</code></td>
-                            <td>Run full scan with default settings</td>
+                            <td>Run single-timeframe scan</td>
                         </tr>
                         <tr>
-                            <td><code>!scan direction=LONG timeframe=1d</code></td>
-                            <td>Customized scan parameters</td>
+                            <td><code>!mtfscan</code></td>
+                            <td>Multi-timeframe scan (LTF + HTF)</td>
                         </tr>
                         <tr>
-                            <td><code>!test</code></td>
-                            <td>Quick test scan (50 tickers)</td>
-                        </tr>
-                        <tr>
-                            <td><code>!live</code></td>
-                            <td>Start live scanner (continuous)</td>
+                            <td><code>!trinityscan</code></td>
+                            <td>3-timeframe scan with bias filter (LTF + MTF + Bias)</td>
                         </tr>
                         <tr>
                             <td><code>!status</code></td>
