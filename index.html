@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maverick Suite | Documentation</title>
+    <meta name="description" content="Official documentation for the Maverick Suite - MAV Oscillator, Slingshot Pro, and MAV RADAR trading tools.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="#" class="logo">
+                <span class="logo-icon">&#9670;</span>
+                <span class="logo-text">MAVERICK</span>
+            </a>
+            <span class="logo-badge">SUITE</span>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <span class="nav-section-title">Getting Started</span>
+                <a href="#introduction" class="nav-link active">Introduction</a>
+                <a href="#installation" class="nav-link">Installation</a>
+                <a href="#quick-start" class="nav-link">Quick Start</a>
+            </div>
+
+            <div class="nav-section">
+                <span class="nav-section-title">MAV Oscillator</span>
+                <a href="#mav-overview" class="nav-link">Overview</a>
+                <a href="#mav-t" class="nav-link">MAV-T (Structure)</a>
+                <a href="#mav-e" class="nav-link">MAV-E (Entry)</a>
+                <a href="#mav-htf" class="nav-link">MAV-HTF (Bias)</a>
+                <a href="#mav-settings" class="nav-link">Settings</a>
+                <a href="#mav-pivots" class="nav-link">Pivot Classification</a>
+            </div>
+
+            <div class="nav-section">
+                <span class="nav-section-title">Slingshot Pro</span>
+                <a href="#ssp-overview" class="nav-link">Overview</a>
+                <a href="#ssp-candle-fills" class="nav-link">Candle Fills</a>
+                <a href="#ssp-confluence" class="nav-link">MTF Confluence</a>
+                <a href="#ssp-settings" class="nav-link">Settings</a>
+            </div>
+
+            <div class="nav-section">
+                <span class="nav-section-title">MAV RADAR</span>
+                <a href="#radar-overview" class="nav-link">Overview</a>
+                <a href="#radar-modes" class="nav-link">Scan Modes</a>
+                <a href="#radar-scoring" class="nav-link">Scoring System</a>
+                <a href="#radar-discord" class="nav-link">Discord Integration</a>
+            </div>
+
+            <div class="nav-section">
+                <span class="nav-section-title">Methodology</span>
+                <a href="#methodology-dow" class="nav-link">Dow Theory</a>
+                <a href="#methodology-cog" class="nav-link">Center of Gravity</a>
+                <a href="#methodology-mtf" class="nav-link">MTF Analysis</a>
+                <a href="#methodology-entries" class="nav-link">Entry Types</a>
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">
+            <span class="version">v2.0</span>
+        </div>
+    </aside>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header" id="mobile-header">
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <span class="mobile-logo">MAVERICK SUITE</span>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-container">
+
+            <!-- Introduction -->
+            <section id="introduction" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge">Getting Started</span>
+                    <h1>Introduction</h1>
+                </div>
+
+                <p class="lead">The Maverick Suite is a collection of precision trading tools built on Center of Gravity (COG) principles and Dow Theory. Designed for trend continuation trading - no reversals, no gambling.</p>
+
+                <div class="callout callout-gold">
+                    <div class="callout-icon">&#9670;</div>
+                    <div class="callout-content">
+                        <strong>Core Philosophy</strong>
+                        <p>Structure first. Entry second. Confluence always. Trade what IS, not what you hope will be.</p>
+                    </div>
+                </div>
+
+                <h2>What's in the Suite</h2>
+
+                <div class="tool-cards">
+                    <div class="tool-card blue">
+                        <div class="tool-icon">&#9651;</div>
+                        <h3>MAV Oscillator</h3>
+                        <p>The foundation. Three modes for structure mapping, entry targeting, and directional bias. Based on Ehlers' COG with zero lag.</p>
+                        <a href="#mav-overview" class="tool-link">View Docs &rarr;</a>
+                    </div>
+
+                    <div class="tool-card gold">
+                        <div class="tool-icon">&#9733;</div>
+                        <h3>Slingshot Pro</h3>
+                        <p>Multi-timeframe confluence tool. Candle fills show when LTF and HTF align. Your final check before entry.</p>
+                        <a href="#ssp-overview" class="tool-link">View Docs &rarr;</a>
+                    </div>
+
+                    <div class="tool-card purple">
+                        <div class="tool-icon">&#9881;</div>
+                        <h3>MAV RADAR</h3>
+                        <p>Automated scanner. Scans thousands of symbols across stocks, crypto, forex for MAV setups. Discord alerts included.</p>
+                        <a href="#radar-overview" class="tool-link">View Docs &rarr;</a>
+                    </div>
+                </div>
+
+                <h2>Key Principles</h2>
+
+                <div class="principles-list">
+                    <div class="principle">
+                        <span class="principle-num">01</span>
+                        <div class="principle-content">
+                            <h4>No Reversals</h4>
+                            <p>Every reversal is a breakout, but 85% of reversals fail. Trade continuations only - bet with the trend until proven otherwise.</p>
+                        </div>
+                    </div>
+                    <div class="principle">
+                        <span class="principle-num">02</span>
+                        <div class="principle-content">
+                            <h4>Top-Down Analysis</h4>
+                            <p>HTF defines direction. LTF provides entries. Strong trends on slower timeframes, bet with that trend on faster timeframes.</p>
+                        </div>
+                    </div>
+                    <div class="principle">
+                        <span class="principle-num">03</span>
+                        <div class="principle-content">
+                            <h4>Context is Everything</h4>
+                            <p>A setup without macro context is meaningless. A pullback is meaningless without defining what has been broken.</p>
+                        </div>
+                    </div>
+                    <div class="principle">
+                        <span class="principle-num">04</span>
+                        <div class="principle-content">
+                            <h4>Confluence Stacking</h4>
+                            <p>Stack your edge: SR levels, Fibonacci retracements, VWAPs, pivot alignment. More confluence = higher probability.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Installation -->
+            <section id="installation" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge">Getting Started</span>
+                    <h1>Installation</h1>
+                </div>
+
+                <h2>TradingView Indicators</h2>
+                <p>MAV Oscillator and Slingshot Pro are TradingView indicators.</p>
+
+                <div class="steps">
+                    <div class="step">
+                        <span class="step-num">1</span>
+                        <div class="step-content">
+                            <h4>Open TradingView</h4>
+                            <p>Go to <a href="https://tradingview.com" target="_blank">tradingview.com</a> and open any chart.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">2</span>
+                        <div class="step-content">
+                            <h4>Open Indicators</h4>
+                            <p>Click the "Indicators" button (fx icon) at the top of the chart.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">3</span>
+                        <div class="step-content">
+                            <h4>Search for MAV</h4>
+                            <p>Search "MAV 2.0" or "Slingshot Pro" in the indicator search. Look for indicators by <code>TheBastian999</code>.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">4</span>
+                        <div class="step-content">
+                            <h4>Add to Chart</h4>
+                            <p>Click to add the indicator. It will appear as a separate pane below your price chart.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>MAV RADAR (Python)</h2>
+                <p>MAV RADAR is a Python-based scanner that runs locally or on a server.</p>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>Requirements</span>
+                    </div>
+                    <pre><code>pip install yfinance pandas numpy requests tqdm tabulate discord.py</code></pre>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>Run a Scan</span>
+                    </div>
+                    <pre><code># Test scan (first 50 tickers)
+python MAV_RADAR_v9.py --test
+
+# Full scan (all configured assets)
+python MAV_RADAR_v9.py --full
+
+# Quick scan with parameters
+python quick_scan.py 1d LONG stocks</code></pre>
+                </div>
+            </section>
+
+            <!-- Quick Start -->
+            <section id="quick-start" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge">Getting Started</span>
+                    <h1>Quick Start</h1>
+                </div>
+
+                <p class="lead">Get up and running with the Maverick Suite in 5 minutes.</p>
+
+                <h2>Recommended Setup</h2>
+
+                <div class="setup-grid">
+                    <div class="setup-item">
+                        <h4>Chart Layout</h4>
+                        <ul>
+                            <li>Price chart (candlesticks)</li>
+                            <li>MAV-T or MAV-E below price</li>
+                            <li>Slingshot Pro for confluence</li>
+                        </ul>
+                    </div>
+                    <div class="setup-item">
+                        <h4>Timeframes</h4>
+                        <ul>
+                            <li><strong>HTF Bias:</strong> Daily or Weekly</li>
+                            <li><strong>Structure:</strong> 4H or Daily</li>
+                            <li><strong>Entries:</strong> 1H or 4H</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>Basic Workflow</h2>
+
+                <div class="workflow">
+                    <div class="workflow-step">
+                        <div class="workflow-num">1</div>
+                        <div class="workflow-content">
+                            <h4>Check HTF Bias</h4>
+                            <p>Open Daily chart. Check MAV-HTF slope. UP = look for longs. DOWN = look for shorts.</p>
+                        </div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="workflow-num">2</div>
+                        <div class="workflow-content">
+                            <h4>Map Structure</h4>
+                            <p>On 4H, use MAV-T to identify pivot sequence. HH+HL = uptrend. LL+LH = downtrend.</p>
+                        </div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="workflow-num">3</div>
+                        <div class="workflow-content">
+                            <h4>Wait for Break</h4>
+                            <p>Price must break something: median, Donchian, SR level, VWAP. No break = no trade.</p>
+                        </div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="workflow-num">4</div>
+                        <div class="workflow-content">
+                            <h4>Entry on Pullback</h4>
+                            <p>After break, wait for first pullback. Check Slingshot Pro for confluence. Enter at HL (longs) or LH (shorts).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout callout-warning">
+                    <div class="callout-icon">!</div>
+                    <div class="callout-content">
+                        <strong>Remember</strong>
+                        <p>A random pivot is weak. A pullback after breaking something is strong. Context matters.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MAV Overview -->
+            <section id="mav-overview" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge">MAV Oscillator</span>
+                    <h1>Overview</h1>
+                </div>
+
+                <p class="lead">The MAV Oscillator is the core of the Maverick Suite. Built on Ehlers' Center of Gravity (COG) principles with optimized smoothing for clean structure analysis.</p>
+
+                <h2>Why MAV?</h2>
+
+                <div class="feature-grid">
+                    <div class="feature">
+                        <h4>Zero Lag</h4>
+                        <p>Unlike moving averages, COG finds the balance point of price with virtually no lag while maintaining smoothness.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>No Artificial Limits</h4>
+                        <p>Unlike RSI or Stochastic, MAV has no upper/lower bounds. This allows accurate structure analysis without false "overbought/oversold" signals.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>Clear Pivots</h4>
+                        <p>Pivots form on slope changes. Easy to label, easy to track sequences, easy to identify structure.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>Three Modes</h4>
+                        <p>MAV-T for structure, MAV-E for entries, MAV-HTF for bias. Each optimized for its purpose.</p>
+                    </div>
+                </div>
+
+                <h2>The Three Modes</h2>
+
+                <table class="doc-table">
+                    <thead>
+                        <tr>
+                            <th>Mode</th>
+                            <th>Purpose</th>
+                            <th>Best For</th>
+                            <th>Characteristics</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge blue">MAV-T</span></td>
+                            <td>Structure</td>
+                            <td>LTF structure mapping</td>
+                            <td>Clean pivots, low noise, less divergence</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge gold">MAV-E</span></td>
+                            <td>Entry</td>
+                            <td>All timeframes</td>
+                            <td>Fast reaction, more pivots, more divergence</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge purple">MAV-HTF</span></td>
+                            <td>Bias</td>
+                            <td>Daily+ ONLY</td>
+                            <td>Macro trend, very smooth, directional bias</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="callout callout-info">
+                    <div class="callout-icon">i</div>
+                    <div class="callout-content">
+                        <strong>T + E Relationship</strong>
+                        <p>"The relationship between -T and -E is a sliding scale between prioritising structure and prioritising the visibility of entries. A 'one hand washes the other' pairing of tools."</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MAV-T -->
+            <section id="mav-t" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge">MAV Oscillator</span>
+                    <h1>MAV-T (Structure)</h1>
+                </div>
+
+                <p class="lead">MAV-T is optimized for structure mapping. Use it to draw channels, connect pivots, and identify the overall trend architecture.</p>
+
+                <h2>When to Use</h2>
+                <ul class="doc-list">
+                    <li>Drawing breakout lines on the oscillator</li>
+                    <li>Tracking channel structure</li>
+                    <li>Connecting pivot sequences (HH-HL or LL-LH)</li>
+                    <li>LTF structure mapping</li>
+                </ul>
+
+                <h2>Characteristics</h2>
+                <ul class="doc-list">
+                    <li><strong>Smoother:</strong> Less reactive than MAV-E</li>
+                    <li><strong>Cleaner pivots:</strong> Fewer false signals</li>
+                    <li><strong>Less divergence:</strong> Focus is on structure, not divergence signals</li>
+                    <li><strong>Better for drawing:</strong> Lines and channels are cleaner</li>
+                </ul>
+
+                <div class="visual-box">
+                    <svg viewBox="0 0 400 120" class="mav-wave">
+                        <path d="M20 90 L80 40 L140 70 L200 30 L260 55 L320 20 L380 50" stroke="#3b82f6" stroke-width="3" fill="none" stroke-linejoin="round"/>
+                        <circle cx="80" cy="40" r="6" fill="#3b82f6"/>
+                        <circle cx="140" cy="70" r="6" fill="#3b82f6"/>
+                        <circle cx="200" cy="30" r="6" fill="#3b82f6"/>
+                        <circle cx="260" cy="55" r="6" fill="#3b82f6"/>
+                        <circle cx="320" cy="20" r="6" fill="#3b82f6"/>
+                        <text x="80" y="30" text-anchor="middle" fill="#3b82f6" font-size="10">HH</text>
+                        <text x="140" y="90" text-anchor="middle" fill="#d4af37" font-size="10">HL</text>
+                        <text x="200" y="20" text-anchor="middle" fill="#3b82f6" font-size="10">HH</text>
+                        <text x="260" y="75" text-anchor="middle" fill="#d4af37" font-size="10">HL</text>
+                        <text x="320" y="10" text-anchor="middle" fill="#3b82f6" font-size="10">HH</text>
+                    </svg>
+                    <p class="visual-caption">MAV-T: Clean pivots at slope changes, ideal for structure mapping</p>
+                </div>
+            </section>
+
+            <!-- MAV-E -->
+            <section id="mav-e" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge">MAV Oscillator</span>
+                    <h1>MAV-E (Entry)</h1>
+                </div>
+
+                <p class="lead">MAV-E is the "scope on a rifle" - optimized for precise entry targeting. More reactive, more pivots, more visibility of divergences.</p>
+
+                <h2>When to Use</h2>
+                <ul class="doc-list">
+                    <li>Targeting precise entries</li>
+                    <li>Spotting divergences</li>
+                    <li>Fine-tuning entry timing on any timeframe</li>
+                    <li>When you need more detail than MAV-T provides</li>
+                </ul>
+
+                <h2>Characteristics</h2>
+                <ul class="doc-list">
+                    <li><strong>More reactive:</strong> Faster response to price changes</li>
+                    <li><strong>More pivots:</strong> Catches smaller swings</li>
+                    <li><strong>More divergence:</strong> Better for spotting divergence signals</li>
+                    <li><strong>Stretches price action:</strong> Makes small moves more visible</li>
+                </ul>
+
+                <div class="visual-box">
+                    <svg viewBox="0 0 400 120" class="mav-wave">
+                        <path d="M20 70 L50 35 L80 55 L110 25 L140 45 L170 15 L200 50 L230 30 L260 60 L290 25 L320 45 L350 20 L380 40" stroke="#d4af37" stroke-width="3" fill="none" stroke-linejoin="round"/>
+                        <circle cx="50" cy="35" r="5" fill="#d4af37"/>
+                        <circle cx="80" cy="55" r="5" fill="#d4af37"/>
+                        <circle cx="110" cy="25" r="5" fill="#d4af37"/>
+                        <circle cx="140" cy="45" r="5" fill="#d4af37"/>
+                        <circle cx="170" cy="15" r="5" fill="#d4af37"/>
+                        <circle cx="200" cy="50" r="5" fill="#d4af37"/>
+                        <circle cx="230" cy="30" r="5" fill="#d4af37"/>
+                        <circle cx="260" cy="60" r="5" fill="#d4af37"/>
+                        <circle cx="290" cy="25" r="5" fill="#d4af37"/>
+                        <circle cx="320" cy="45" r="5" fill="#d4af37"/>
+                        <circle cx="350" cy="20" r="5" fill="#d4af37"/>
+                    </svg>
+                    <p class="visual-caption">MAV-E: More pivots, faster reaction - "scope on a rifle" for entries</p>
+                </div>
+
+                <div class="callout callout-gold">
+                    <div class="callout-icon">&#9670;</div>
+                    <div class="callout-content">
+                        <strong>Pro Tip</strong>
+                        <p>Use MAV-T to identify the structure, then switch to MAV-E when you're ready to time your entry precisely.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MAV-HTF -->
+            <section id="mav-htf" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge">MAV Oscillator</span>
+                    <h1>MAV-HTF (Bias)</h1>
+                </div>
+
+                <p class="lead">MAV-HTF provides macro directional bias. Use it on Daily+ timeframes only to determine whether you should be looking for longs or shorts.</p>
+
+                <div class="callout callout-warning">
+                    <div class="callout-icon">!</div>
+                    <div class="callout-content">
+                        <strong>Daily+ ONLY</strong>
+                        <p>MAV-HTF is designed for Daily and higher timeframes. It's too fast/noisy for intraday charts. Use MAV-T or MAV-E for lower timeframes.</p>
+                    </div>
+                </div>
+
+                <h2>When to Use</h2>
+                <ul class="doc-list">
+                    <li>Determining overall directional bias</li>
+                    <li>Daily, Weekly, Monthly charts</li>
+                    <li>Filtering out counter-trend trades</li>
+                    <li>First step in top-down analysis</li>
+                </ul>
+
+                <h2>Reading MAV-HTF</h2>
+
+                <div class="reading-grid">
+                    <div class="reading-item bullish">
+                        <h4>Sloping UP</h4>
+                        <p>Look for <strong>LONG</strong> setups only. Filter out short signals on LTF.</p>
+                    </div>
+                    <div class="reading-item bearish">
+                        <h4>Sloping DOWN</h4>
+                        <p>Look for <strong>SHORT</strong> setups only. Filter out long signals on LTF.</p>
+                    </div>
+                </div>
+
+                <div class="visual-box">
+                    <svg viewBox="0 0 400 120" class="mav-wave">
+                        <path d="M20 100 L120 50 L220 70 L320 25 L380 35" stroke="#8b5cf6" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+                        <circle cx="120" cy="50" r="6" fill="#8b5cf6"/>
+                        <circle cx="220" cy="70" r="6" fill="#8b5cf6"/>
+                        <circle cx="320" cy="25" r="6" fill="#8b5cf6"/>
+                    </svg>
+                    <p class="visual-caption">MAV-HTF: Smooth macro wave for directional bias (Daily+ only)</p>
+                </div>
+            </section>
+
+            <!-- MAV Settings -->
+            <section id="mav-settings" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge">MAV Oscillator</span>
+                    <h1>Settings</h1>
+                </div>
+
+                <p class="lead">MAV uses fixed, optimized settings. Do not modify these values - they have been carefully tuned for optimal performance.</p>
+
+                <div class="callout callout-warning">
+                    <div class="callout-icon">!</div>
+                    <div class="callout-content">
+                        <strong>Do Not Modify</strong>
+                        <p>These settings are intentionally fixed. Do not add timeframe-adaptive smoothing, scaling, or any other "improvements" to these oscillators.</p>
+                    </div>
+                </div>
+
+                <h2>Fixed Parameters</h2>
+
+                <table class="doc-table">
+                    <thead>
+                        <tr>
+                            <th>Indicator</th>
+                            <th>Parameter</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge blue">MAV</span></td>
+                            <td>COG_LENGTH</td>
+                            <td><code>8</code></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge blue">MAV</span></td>
+                            <td>RMA_SMOOTH</td>
+                            <td><code>166</code></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge gold">BHXL</span></td>
+                            <td>LPPeriod</td>
+                            <td><code>6</code></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge gold">BHXL</span></td>
+                            <td>ct4</td>
+                            <td><code>0.991</code></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge purple">BHP2</span></td>
+                            <td>LPPeriod_base</td>
+                            <td><code>3.2</code></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge purple">BHP2</span></td>
+                            <td>lb</td>
+                            <td><code>157</code></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge purple">BHP2</span></td>
+                            <td>ct4</td>
+                            <td><code>0.991</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Pivot Detection</h2>
+                <p>Pivots are detected using a 3-bar window (1 bar left + current + 1 bar right). A pivot forms when the slope changes direction.</p>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>Pivot Lookback</span>
+                    </div>
+                    <pre><code>MAV_PIVOT_LOOKBACK = 1  // 3-bar pivot window for all oscillators</code></pre>
+                </div>
+            </section>
+
+            <!-- MAV Pivots -->
+            <section id="mav-pivots" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge">MAV Oscillator</span>
+                    <h1>Pivot Classification</h1>
+                </div>
+
+                <p class="lead">Pivots are the building blocks of structure. Learn to classify them correctly and the trend becomes obvious.</p>
+
+                <h2>Pivot Types</h2>
+
+                <div class="pivot-grid">
+                    <div class="pivot-card hh">
+                        <h4>HH - Higher High</h4>
+                        <p>A peak that's higher than the previous peak. Confirms uptrend continuation.</p>
+                    </div>
+                    <div class="pivot-card hl">
+                        <h4>HL - Higher Low</h4>
+                        <p>A valley that's higher than the previous valley. Entry point in uptrends.</p>
+                    </div>
+                    <div class="pivot-card ll">
+                        <h4>LL - Lower Low</h4>
+                        <p>A valley that's lower than the previous valley. Confirms downtrend continuation.</p>
+                    </div>
+                    <div class="pivot-card lh">
+                        <h4>LH - Lower High</h4>
+                        <p>A peak that's lower than the previous peak. Entry point in downtrends.</p>
+                    </div>
+                </div>
+
+                <h2>Trend Identification</h2>
+
+                <div class="trend-box">
+                    <div class="trend uptrend">
+                        <h4>UPTREND</h4>
+                        <p>HH + HL sequence</p>
+                        <p class="trend-action">Trade: <strong>LONG at HL</strong></p>
+                    </div>
+                    <div class="trend downtrend">
+                        <h4>DOWNTREND</h4>
+                        <p>LL + LH sequence</p>
+                        <p class="trend-action">Trade: <strong>SHORT at LH</strong></p>
+                    </div>
+                </div>
+
+                <div class="callout callout-info">
+                    <div class="callout-icon">i</div>
+                    <div class="callout-content">
+                        <strong>The Rule</strong>
+                        <p>Pivots form on MAV slope changes. Label every pivot. Trade WITH the wave direction - HL entries in uptrends, LH entries in downtrends.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slingshot Pro Overview -->
+            <section id="ssp-overview" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge">Slingshot Pro</span>
+                    <h1>Overview</h1>
+                </div>
+
+                <p class="lead">Slingshot Pro is your multi-timeframe confluence tool. It shows when LTF and HTF are aligned through candle fills - your final check before pulling the trigger.</p>
+
+                <div class="callout callout-gold">
+                    <div class="callout-icon">&#9733;</div>
+                    <div class="callout-content">
+                        <strong>Key Concept</strong>
+                        <p>"Slingshot Pro shows confluence across timeframes with candle fills. Check it as your last point of the confluence matrix before entering the trade. All estimates aligned = highest probability."</p>
+                    </div>
+                </div>
+
+                <h2>What It Does</h2>
+                <ul class="doc-list">
+                    <li>Combines MAV-E and MAV-HTF signals into one visual</li>
+                    <li>Colors candle fills based on alignment</li>
+                    <li>Shows LTF, Current TF, and HTF estimates</li>
+                    <li>Filters noise - no fill means mixed signals</li>
+                </ul>
+
+                <h2>When to Use</h2>
+                <ul class="doc-list">
+                    <li><strong>After</strong> establishing HTF bias with MAV-HTF</li>
+                    <li><strong>After</strong> identifying structure with MAV-T</li>
+                    <li><strong>Before</strong> entering any trade</li>
+                    <li>As your final confluence confirmation</li>
+                </ul>
+            </section>
+
+            <!-- Slingshot Candle Fills -->
+            <section id="ssp-candle-fills" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge">Slingshot Pro</span>
+                    <h1>Candle Fills</h1>
+                </div>
+
+                <p class="lead">Candle fill colors tell you instantly whether timeframes are aligned.</p>
+
+                <h2>Fill Logic</h2>
+
+                <div class="fill-logic">
+                    <div class="fill-row bullish">
+                        <div class="fill-inputs">
+                            <span class="fill-input">MAV-E <span class="arrow up">&uarr;</span></span>
+                            <span class="fill-plus">+</span>
+                            <span class="fill-input">MAV-HTF <span class="arrow up">&uarr;</span></span>
+                        </div>
+                        <span class="fill-equals">=</span>
+                        <div class="fill-result bullish-fill">
+                            <strong>GREEN FILL</strong>
+                            <span>Look for Long</span>
+                        </div>
+                    </div>
+
+                    <div class="fill-row bearish">
+                        <div class="fill-inputs">
+                            <span class="fill-input">MAV-E <span class="arrow down">&darr;</span></span>
+                            <span class="fill-plus">+</span>
+                            <span class="fill-input">MAV-HTF <span class="arrow down">&darr;</span></span>
+                        </div>
+                        <span class="fill-equals">=</span>
+                        <div class="fill-result bearish-fill">
+                            <strong>RED FILL</strong>
+                            <span>Look for Short</span>
+                        </div>
+                    </div>
+
+                    <div class="fill-row neutral">
+                        <div class="fill-inputs">
+                            <span class="fill-input">MAV-E <span class="arrow up">&uarr;</span></span>
+                            <span class="fill-plus">+</span>
+                            <span class="fill-input">MAV-HTF <span class="arrow down">&darr;</span></span>
+                        </div>
+                        <span class="fill-equals">=</span>
+                        <div class="fill-result neutral-fill">
+                            <strong>NO FILL</strong>
+                            <span>Wait for Alignment</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout callout-warning">
+                    <div class="callout-icon">!</div>
+                    <div class="callout-content">
+                        <strong>No Fill = No Trade</strong>
+                        <p>When candles have no fill, timeframes are conflicting. Wait for alignment before taking any trades.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slingshot MTF Confluence -->
+            <section id="ssp-confluence" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge">Slingshot Pro</span>
+                    <h1>MTF Confluence</h1>
+                </div>
+
+                <p class="lead">Slingshot Pro shows three timeframe estimates. When all three align, you have maximum confluence.</p>
+
+                <h2>The Three Estimates</h2>
+
+                <table class="doc-table">
+                    <thead>
+                        <tr>
+                            <th>Estimate</th>
+                            <th>Description</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>LTF</td>
+                            <td>Lower timeframe signal</td>
+                            <td>Entry timing</td>
+                        </tr>
+                        <tr>
+                            <td>Current TF</td>
+                            <td>Current chart timeframe</td>
+                            <td>Setup confirmation</td>
+                        </tr>
+                        <tr>
+                            <td>HTF</td>
+                            <td>Higher timeframe signal</td>
+                            <td>Directional bias</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Confluence Levels</h2>
+
+                <p>Stack these with Slingshot Pro signals for highest probability:</p>
+
+                <div class="confluence-items">
+                    <div class="confluence-item">
+                        <span class="confluence-icon">&mdash;</span>
+                        <h4>Support/Resistance</h4>
+                        <p>Horizontal levels from previous pivots</p>
+                    </div>
+                    <div class="confluence-item">
+                        <span class="confluence-icon">&phi;</span>
+                        <h4>Fibonacci Retracements</h4>
+                        <p>38.2%, 50%, 61.8% pullback levels</p>
+                    </div>
+                    <div class="confluence-item">
+                        <span class="confluence-icon">&asymp;</span>
+                        <h4>VWAP Levels</h4>
+                        <p>Volume-weighted average price</p>
+                    </div>
+                    <div class="confluence-item">
+                        <span class="confluence-icon">&#9670;</span>
+                        <h4>Pivot Confluence</h4>
+                        <p>Multiple pivots at same level</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slingshot Settings -->
+            <section id="ssp-settings" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge">Slingshot Pro</span>
+                    <h1>Settings</h1>
+                </div>
+
+                <p class="lead">Slingshot Pro uses the same core MAV parameters. The candle fill logic is automatic based on slope alignment.</p>
+
+                <h2>Default Configuration</h2>
+                <p>Slingshot Pro inherits the MAV settings. No additional configuration is needed for the candle fill logic - it automatically detects MAV-E and MAV-HTF slope alignment.</p>
+
+                <h2>Visual Options</h2>
+                <ul class="doc-list">
+                    <li><strong>Fill Opacity:</strong> Adjust transparency of candle fills</li>
+                    <li><strong>Show Estimates:</strong> Toggle visibility of LTF/CTF/HTF labels</li>
+                    <li><strong>Color Scheme:</strong> Customize bullish/bearish colors</li>
+                </ul>
+            </section>
+
+            <!-- RADAR Overview -->
+            <section id="radar-overview" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge">MAV RADAR</span>
+                    <h1>Overview</h1>
+                </div>
+
+                <p class="lead">MAV RADAR is an automated scanner that applies the MAV methodology to thousands of symbols across multiple asset classes.</p>
+
+                <h2>Capabilities</h2>
+
+                <div class="feature-grid">
+                    <div class="feature">
+                        <h4>Multi-Asset</h4>
+                        <p>Scans stocks, crypto (Binance Futures), ETFs, commodities, indices, and forex.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>Multi-Timeframe</h4>
+                        <p>Analyzes both LTF (scan) and HTF (context) for true MTF confluence scoring.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>Pattern Detection</h4>
+                        <p>Identifies HH+HL sequences for longs, LL+LH sequences for shorts automatically.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>Confluence Scoring</h4>
+                        <p>Scores 0-100 based on EMA alignment, volume, Fibs, AVWAP, divergences.</p>
+                    </div>
+                </div>
+
+                <h2>Output Types</h2>
+                <ul class="doc-list">
+                    <li><strong>CSV:</strong> Full results for analysis</li>
+                    <li><strong>HTML:</strong> Formatted interactive table</li>
+                    <li><strong>Discord:</strong> Alerts with top candidates</li>
+                    <li><strong>Charts:</strong> Auto-generated MAV charts for top 5 results</li>
+                </ul>
+            </section>
+
+            <!-- RADAR Modes -->
+            <section id="radar-modes" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge">MAV RADAR</span>
+                    <h1>Scan Modes</h1>
+                </div>
+
+                <h2>MAV Mode (Default)</h2>
+                <p>Pivot detection on the smoothed COG line. This is the recommended mode for clean structure analysis.</p>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>MAV Mode Settings</span>
+                    </div>
+                    <pre><code>SCAN_MODE = "MAV"
+MAV_COG_LENGTH = 8
+MAV_RMA_SMOOTH = 166
+MAV_PIVOT_LOOKBACK = 1  # 3-bar pivot window</code></pre>
+                </div>
+
+                <h2>PRICE Mode</h2>
+                <p>Pivot detection directly on raw price data. More sensitive, more signals. Use for aggressive scanning.</p>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>PRICE Mode Settings</span>
+                    </div>
+                    <pre><code>SCAN_MODE = "PRICE"
+PRICE_PIVOT_LOOKBACK = 3  # 7-bar pivot window (3 left + 3 right)</code></pre>
+                </div>
+
+                <h2>Trade Directions</h2>
+
+                <div class="direction-grid">
+                    <div class="direction-card long">
+                        <h4>LONG</h4>
+                        <p>Scans for HH+HL sequences and bullish breaks above pivot highs.</p>
+                    </div>
+                    <div class="direction-card short">
+                        <h4>SHORT</h4>
+                        <p>Scans for LL+LH sequences and bearish breaks below pivot lows.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RADAR Scoring -->
+            <section id="radar-scoring" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge">MAV RADAR</span>
+                    <h1>Scoring System</h1>
+                </div>
+
+                <p class="lead">Each symbol receives a score from 0-100 based on multiple confluence factors.</p>
+
+                <h2>Scoring Factors</h2>
+
+                <table class="doc-table">
+                    <thead>
+                        <tr>
+                            <th>Factor</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pattern Strength</td>
+                            <td>Quality of pivot sequence and break status</td>
+                        </tr>
+                        <tr>
+                            <td>EMA Alignment</td>
+                            <td>5, 50, 200 EMA positioning and slopes</td>
+                        </tr>
+                        <tr>
+                            <td>Relative Volume</td>
+                            <td>Current volume vs average (RVOL)</td>
+                        </tr>
+                        <tr>
+                            <td>Fibonacci Levels</td>
+                            <td>Proximity to key retracement levels</td>
+                        </tr>
+                        <tr>
+                            <td>AVWAP/POC</td>
+                            <td>Position relative to anchored VWAP and POC</td>
+                        </tr>
+                        <tr>
+                            <td>Divergences</td>
+                            <td>RSI, MACD, Stochastic, CCI divergences</td>
+                        </tr>
+                        <tr>
+                            <td>Relative Strength</td>
+                            <td>Performance vs SPY and sector (stocks only)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Behavior Stages</h2>
+                <p>RADAR classifies each symbol into a behavior stage:</p>
+
+                <div class="stage-grid">
+                    <div class="stage building">
+                        <h4>Building Structure</h4>
+                        <p>Forming pivot sequence, no break yet</p>
+                    </div>
+                    <div class="stage fresh">
+                        <h4>Fresh Break</h4>
+                        <p>Just broke a pivot level</p>
+                    </div>
+                    <div class="stage retracing">
+                        <h4>Retracing</h4>
+                        <p>Pulling back after a break</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RADAR Discord -->
+            <section id="radar-discord" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge">MAV RADAR</span>
+                    <h1>Discord Integration</h1>
+                </div>
+
+                <p class="lead">MAV RADAR can send scan results directly to Discord via webhooks or bot commands.</p>
+
+                <h2>Webhook Setup</h2>
+                <p>Configure webhooks in <code>discord_config.json</code>:</p>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>discord_config.json</span>
+                    </div>
+                    <pre><code>{
+    "webhook_url": "https://discord.com/api/webhooks/..."
+}</code></pre>
+                </div>
+
+                <h2>Bot Commands</h2>
+
+                <table class="doc-table">
+                    <thead>
+                        <tr>
+                            <th>Command</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>!scan</code></td>
+                            <td>Run full scan with default settings</td>
+                        </tr>
+                        <tr>
+                            <td><code>!scan direction=LONG timeframe=1d</code></td>
+                            <td>Customized scan parameters</td>
+                        </tr>
+                        <tr>
+                            <td><code>!test</code></td>
+                            <td>Quick test scan (50 tickers)</td>
+                        </tr>
+                        <tr>
+                            <td><code>!live</code></td>
+                            <td>Start live scanner (continuous)</td>
+                        </tr>
+                        <tr>
+                            <td><code>!status</code></td>
+                            <td>Check running scan status</td>
+                        </tr>
+                        <tr>
+                            <td><code>!cancel</code></td>
+                            <td>Cancel your running scan</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Methodology: Dow Theory -->
+            <section id="methodology-dow" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge">Methodology</span>
+                    <h1>Dow Theory</h1>
+                </div>
+
+                <p class="lead">The foundational framework for understanding trends. MAV is built on these timeless principles.</p>
+
+                <div class="dow-principles">
+                    <div class="dow-item">
+                        <span class="dow-num">1</span>
+                        <div class="dow-content">
+                            <h4>Trends Persist Until Reversal</h4>
+                            <p>A trend in motion stays in motion. Don't anticipate reversals - wait for confirmation. This is why we trade continuations, not reversals.</p>
+                        </div>
+                    </div>
+                    <div class="dow-item">
+                        <span class="dow-num">2</span>
+                        <div class="dow-content">
+                            <h4>Higher Highs, Higher Lows</h4>
+                            <p>Uptrend = HH + HL sequence. Downtrend = LL + LH sequence. When this sequence breaks, the trend may be exhausted.</p>
+                        </div>
+                    </div>
+                    <div class="dow-item">
+                        <span class="dow-num">3</span>
+                        <div class="dow-content">
+                            <h4>Trends Have Three Phases</h4>
+                            <p>Accumulation (smart money), public participation (the trend), distribution (smart money exits). We trade the middle phase.</p>
+                        </div>
+                    </div>
+                    <div class="dow-item">
+                        <span class="dow-num">4</span>
+                        <div class="dow-content">
+                            <h4>Volume Confirms Trend</h4>
+                            <p>Strong moves should have volume expansion. Weak moves on low volume are setups forming.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Methodology: COG -->
+            <section id="methodology-cog" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge">Methodology</span>
+                    <h1>Center of Gravity</h1>
+                </div>
+
+                <p class="lead">John Ehlers' COG indicator is the mathematical foundation of MAV. It finds the balance point of price with minimal lag.</p>
+
+                <h2>Why COG?</h2>
+
+                <div class="cog-features">
+                    <div class="cog-feature">
+                        <h4>Zero Lag</h4>
+                        <p>Unlike moving averages that lag behind price, COG identifies the current center point of price action.</p>
+                    </div>
+                    <div class="cog-feature">
+                        <h4>Smooth Output</h4>
+                        <p>Despite zero lag, COG produces a smooth line suitable for structure analysis and pivot detection.</p>
+                    </div>
+                    <div class="cog-feature">
+                        <h4>No Bounds</h4>
+                        <p>No artificial 0-100 range. Price can trend indefinitely without hitting "overbought" or "oversold."</p>
+                    </div>
+                </div>
+
+                <blockquote class="doc-quote">
+                    "The primary advantage of the MAV Oscillator is precisely its lack of upper and lower limits, which allows for a more accurate and realistic analysis of market structures."
+                </blockquote>
+            </section>
+
+            <!-- Methodology: MTF -->
+            <section id="methodology-mtf" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge">Methodology</span>
+                    <h1>MTF Analysis</h1>
+                </div>
+
+                <p class="lead">Multi-timeframe analysis is how professionals trade. The slower TF filters noise, the faster TF provides entries.</p>
+
+                <h2>The Hierarchy</h2>
+
+                <div class="mtf-hierarchy">
+                    <div class="mtf-level htf">
+                        <h4>HTF - Bias</h4>
+                        <p>Daily/Weekly defines direction. MAV-HTF slope tells you: LONG or SHORT only.</p>
+                    </div>
+                    <div class="mtf-arrow">&darr;</div>
+                    <div class="mtf-level structure">
+                        <h4>Structure TF</h4>
+                        <p>4H/Daily maps the channel. MAV-T shows pivot sequences and breakout levels.</p>
+                    </div>
+                    <div class="mtf-arrow">&darr;</div>
+                    <div class="mtf-level entry">
+                        <h4>Entry TF</h4>
+                        <p>1H/4H times entries. MAV-E + Slingshot Pro for precise entry at HL (longs) or LH (shorts).</p>
+                    </div>
+                </div>
+
+                <div class="callout callout-gold">
+                    <div class="callout-icon">&#9670;</div>
+                    <div class="callout-content">
+                        <strong>The Rule</strong>
+                        <p>"The smaller waves, the setup waves, are the micro 'legs' within macro waves. Setups allow you to trade within the larger legs of the macro trend."</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Methodology: Entries -->
+            <section id="methodology-entries" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge">Methodology</span>
+                    <h1>Entry Types</h1>
+                </div>
+
+                <p class="lead">Not all pivots are equal. Context determines whether a pivot is a high-probability entry or noise.</p>
+
+                <h2>Random Pivot vs Pullback Entry</h2>
+
+                <blockquote class="doc-quote">
+                    "Technically a Pullback Long and a Bullish Pivot are the same thing - both are 'a Higher Low being detected'. The difference is the point in the sequence where they take place."
+                </blockquote>
+
+                <div class="entry-comparison">
+                    <div class="entry-type weak">
+                        <h4>Random Pivot</h4>
+                        <p>Can occur almost anywhere without meaning too much. No context = weak signal.</p>
+                    </div>
+                    <div class="entry-type strong">
+                        <h4>Pullback Entry</h4>
+                        <p>A pivot that prints <strong>after breaking something</strong> - median, Donchian, SR level. Context = strong signal.</p>
+                    </div>
+                </div>
+
+                <h2>What Counts as "Breaking Something"</h2>
+
+                <ul class="doc-list">
+                    <li><strong>Static Median:</strong> The green/red centerline</li>
+                    <li><strong>Dynamic Median:</strong> The moving median line</li>
+                    <li><strong>Donchian Channels:</strong> Hidden background levels</li>
+                    <li><strong>SR / Fibs / VWAP:</strong> Key confluence levels</li>
+                </ul>
+
+                <div class="callout callout-info">
+                    <div class="callout-icon">i</div>
+                    <div class="callout-content">
+                        <strong>Break, Test & Enter</strong>
+                        <p>The ideal sequence: Price breaks a level &rarr; Tests/retests the level &rarr; Entry on the pullback pivot. This is the highest probability setup.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
