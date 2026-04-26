@@ -64,7 +64,7 @@
                 <a href="#ghost-theory" class="nav-link">Trading Theory</a>
                 <a href="#ghost-pro" class="nav-link">Pro+ Features</a>
                 <a href="#ghost-combo" class="nav-link">Combo Signal</a>
-                <a href="#ghost-confluence" class="nav-link">Confluence Detector</a>
+                <a href="#ghost-confluence" class="nav-link">Confluence Detector <span class="nav-soon">soon</span></a>
                 <a href="#ghost-literature" class="nav-link">Literature</a>
             </div>
 
@@ -1394,12 +1394,20 @@
             <section id="ghost-confluence" class="doc-section">
                 <div class="section-header">
                     <span class="section-badge">Ghost Levels</span>
-                    <h1>Confluence Detector</h1>
+                    <h1>Confluence Detector <span class="coming-soon-tag">Coming Soon</span></h1>
                 </div>
 
-                <p class="lead">A companion indicator that reads up to 3 Ghost Levels Pro+ instances and flags clusters where Monthly + Weekly + Daily POCs stack together.</p>
+                <p class="lead">A companion indicator that will read up to 3 Ghost Levels Pro+ instances and flag clusters where Monthly + Weekly + Daily POCs stack together.</p>
 
-                <h2>Setup</h2>
+                <div class="callout callout-info">
+                    <div class="callout-icon">&#9203;</div>
+                    <div class="callout-content">
+                        <strong>Not yet released</strong>
+                        <p>The Ghost Confluence Detector is in development and not yet available on TradingView. The documentation below previews how it will work once published. Pro+ already exposes the companion plots needed to feed it.</p>
+                    </div>
+                </div>
+
+                <h2>Planned Setup</h2>
                 <div class="steps">
                     <div class="step">
                         <span class="step-num">1</span>
@@ -1412,7 +1420,7 @@
                         <span class="step-num">2</span>
                         <div class="step-content">
                             <h4>Add the Confluence Detector</h4>
-                            <p>Search "Ghost Confluence Detector" in TradingView indicators.</p>
+                            <p>Once released, search "Ghost Confluence Detector" in TradingView indicators.</p>
                         </div>
                     </div>
                     <div class="step">
@@ -1426,16 +1434,8 @@
                         <span class="step-num">4</span>
                         <div class="step-content">
                             <h4>Tune threshold</h4>
-                            <p>Default 0.5% clusters POCs within half a percent of each other. Tighter for index futures, looser for crypto.</p>
+                            <p>Default 0.5% will cluster POCs within half a percent of each other. Tighter for index futures, looser for crypto.</p>
                         </div>
-                    </div>
-                </div>
-
-                <div class="callout callout-warning">
-                    <div class="callout-icon">!</div>
-                    <div class="callout-content">
-                        <strong>Disable unused slots</strong>
-                        <p>Pine v6's <code>input.source</code> defaults to chart <code>close</code> when nothing is connected. The detector auto-rejects sources matching the live close to prevent phantom confluence &mdash; but you should still disable any Slot you haven't fully connected.</p>
                     </div>
                 </div>
             </section>

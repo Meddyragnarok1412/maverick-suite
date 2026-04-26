@@ -1399,3 +1399,31 @@ code {
     border-top: 1px solid var(--border-color);
     background: var(--bg-secondary);
 }
+
+.coming-soon-tag {
+    display: inline-block;
+    margin-left: 12px;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--accent-orange);
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: 6px;
+    vertical-align: middle;
+}
+
+.nav-soon {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--accent-orange);
+    background: rgba(245, 158, 11, 0.12);
+    padding: 1px 5px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
