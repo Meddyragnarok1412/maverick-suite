@@ -1,0 +1,12 @@
+# Image library — keep folder local, only commit images actually referenced by the site
+images/*
+!images/ghost-levels-btc.png
+
+# Vastian subproject (separate concern)
+vastian/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/

@@ -58,6 +58,17 @@
             </div>
 
             <div class="nav-section">
+                <span class="nav-section-title">Ghost Levels</span>
+                <a href="#ghost-overview" class="nav-link">Overview</a>
+                <a href="#ghost-visuals" class="nav-link">Visual Elements</a>
+                <a href="#ghost-theory" class="nav-link">Trading Theory</a>
+                <a href="#ghost-pro" class="nav-link">Pro+ Features</a>
+                <a href="#ghost-combo" class="nav-link">Combo Signal</a>
+                <a href="#ghost-confluence" class="nav-link">Confluence Detector</a>
+                <a href="#ghost-literature" class="nav-link">Literature</a>
+            </div>
+
+            <div class="nav-section">
                 <span class="nav-section-title">Methodology</span>
                 <a href="#methodology-dow" class="nav-link">Dow Theory</a>
                 <a href="#methodology-cog" class="nav-link">Center of Gravity</a>
@@ -124,6 +135,13 @@
                         <h3>MAV RADAR</h3>
                         <p>Automated scanner via Discord. Single TF, MTF, and Trinity scans across stocks, crypto, forex. With auto-generated charts.</p>
                         <a href="#radar-overview" class="tool-link">View Docs &rarr;</a>
+                    </div>
+
+                    <div class="tool-card ghost">
+                        <div class="tool-icon">&#128123;</div>
+                        <h3>POC Ghost Levels Pro</h3>
+                        <p>Volume-based POC indicator. Naked POCs, value area, ongoing + secondary POC, mitigation tracking. LTF-Closes math beats native VP.</p>
+                        <a href="#ghost-overview" class="tool-link">View Docs &rarr;</a>
                     </div>
                 </div>
 
@@ -777,6 +795,14 @@
 
                 <p class="lead">MAV RADAR is an automated scanner hosted on a dedicated server, accessed through Discord bot commands. It applies the MAV methodology to thousands of symbols across multiple asset classes.</p>
 
+                <div class="callout callout-info radar-link-callout">
+                    <div class="callout-icon">&#128279;</div>
+                    <div class="callout-content">
+                        <strong>Matrix Mav — Live Web Scanner</strong>
+                        <p>Run RADAR scans directly in your browser at <a href="https://maverick-radar.org/" target="_blank" rel="noopener">maverick-radar.org</a>. Matrix Mav exposes <strong>all RADAR timeframes</strong> in one persistent dashboard — broader than the per-command Discord bot. No installation, just open the page.</p>
+                    </div>
+                </div>
+
                 <h2>Capabilities</h2>
 
                 <div class="feature-grid">
@@ -1090,6 +1116,346 @@
                         </tr>
                     </tbody>
                 </table>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════ -->
+            <!-- GHOST LEVELS                                                     -->
+            <!-- ═══════════════════════════════════════════════════════════════ -->
+
+            <!-- Ghost Levels Overview -->
+            <section id="ghost-overview" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge ghost-badge">Ghost Levels</span>
+                    <h1>POC Ghost Levels Pro</h1>
+                </div>
+
+                <p class="lead">A volume-based POC indicator built on Steidlmayer's Market Profile. Naked POCs act as price magnets — institutions defend the levels where they accumulated.</p>
+
+                <div class="callout callout-warning">
+                    <div class="callout-icon">!</div>
+                    <div class="callout-content">
+                        <strong>Disclaimer</strong>
+                        <p>This indicator is for educational and informational purposes only. It is NOT investment advice, financial advice, trading advice, or a recommendation to buy or sell any security or financial instrument.</p>
+                    </div>
+                </div>
+
+                <div class="ghost-screenshot">
+                    <img src="images/ghost-levels-btc.png" alt="POC Ghost Levels Pro on BTCUSDT Daily — naked Monthly POCs with value area and ongoing POC">
+                    <p class="visual-caption">POC Ghost Levels Pro on BTCUSDT Daily — Naked Monthly POCs (👻), Ongoing POC (⟳), Value Area, and current-period Volume Profile.</p>
+                </div>
+
+                <h2>What is Point of Control?</h2>
+                <p>Point of Control (POC) is the price level with the highest traded volume within a period. The concept was developed by <strong>J. Peter Steidlmayer</strong> at the Chicago Board of Trade (1981–1983) as part of Market Profile theory.</p>
+
+                <p>POC reveals where institutional traders accumulated their largest positions. These levels act as strong support/resistance because institutions defend them — a POC is where the market said <em>"this is fair price"</em> and traded the most contracts.</p>
+
+                <div class="callout callout-info">
+                    <div class="callout-icon">i</div>
+                    <div class="callout-content">
+                        <strong>Naked POC = price magnet</strong>
+                        <p>A "Naked POC" is a POC that price has not returned to since the period closed. Naked POCs are statistically stronger attractors than already-tested POCs — gravity increases as price approaches.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ghost Levels Visual Elements -->
+            <section id="ghost-visuals" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge ghost-badge">Ghost Levels</span>
+                    <h1>Visual Elements</h1>
+                </div>
+
+                <p class="lead">Each marker on the chart has a specific meaning. Reading them correctly is half the edge.</p>
+
+                <table class="doc-table">
+                    <thead>
+                        <tr>
+                            <th>Element</th>
+                            <th>Meaning</th>
+                            <th>What It Tells You</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Teal POC line</strong></td>
+                            <td>Active Naked POC</td>
+                            <td>Untouched institutional accumulation zone — high-probability magnet</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Orange POC line</strong></td>
+                            <td>Mitigated POC</td>
+                            <td>Already revisited; weaker but still relevant historical reference</td>
+                        </tr>
+                        <tr>
+                            <td><strong>✕ Symbol</strong></td>
+                            <td>Period End</td>
+                            <td>Marks when the POC's calculation period closed (D / W / M / Y) — POC becomes valid only after the X</td>
+                        </tr>
+                        <tr>
+                            <td><strong>● Dot</strong></td>
+                            <td>Mitigation Point</td>
+                            <td>Bar where price first revisited the POC (high ≥ POC ≥ low, or close within 10% of bar range)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>⟳ Symbol</strong></td>
+                            <td>Ongoing POC</td>
+                            <td>Live POC for the current (incomplete) period — updates each tick</td>
+                        </tr>
+                        <tr>
+                            <td><strong>👻 Naked badge</strong></td>
+                            <td>Untouched since formation</td>
+                            <td>POC has never been kissed since its period closed — strongest gravitational pull</td>
+                        </tr>
+                        <tr>
+                            <td><strong>"2nd" label</strong></td>
+                            <td>Secondary POC</td>
+                            <td>Second-highest volume bin in the current period — backup level</td>
+                        </tr>
+                        <tr>
+                            <td><strong>VAH / VAL lines</strong></td>
+                            <td>Value Area High / Low</td>
+                            <td>Boundaries containing 67% of the period's volume — the "fair value" envelope</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>The Ghost Effect</h2>
+                <p>Extended POC lines represent <strong>market memory</strong>. Even after a period closes, the POC remains on the chart as a horizontal level. Price gravitates toward these levels in the future — they represent the "fair price" where most volume traded, and the market keeps coming back to test them.</p>
+            </section>
+
+            <!-- Ghost Levels Trading Theory -->
+            <section id="ghost-theory" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge ghost-badge">Ghost Levels</span>
+                    <h1>Trading Theory</h1>
+                </div>
+
+                <p class="lead">All markets are auction processes seeking to maximize volume. POCs reveal where the auction settled.</p>
+
+                <h2>Auction Market Theory</h2>
+                <p>Volume is the truest indicator of the market's ability to facilitate trade. Markets that fail to facilitate trade at a given price will move to levels that better facilitate it. The POC is, by definition, the price where the market facilitated the most trade — therefore it represents the fairest price the market discovered during that period.</p>
+
+                <h2>Why Institutions Defend POCs</h2>
+                <p>Big institutions cannot enter positions instantly — a $500M position takes hours or days to fill without moving the market. They accumulate over time, and the POC reveals where those positions formed. When price returns to that level, those institutions defend their average entry — creating reliable bounces.</p>
+
+                <div class="principles-list">
+                    <div class="principle">
+                        <span class="principle-num">01</span>
+                        <div class="principle-content">
+                            <h4>First Test = Highest Probability</h4>
+                            <p>Trade the first POC test (the mitigation) for highest-probability setups. Subsequent tests weaken as the level loses its "naked" status.</p>
+                        </div>
+                    </div>
+                    <div class="principle">
+                        <span class="principle-num">02</span>
+                        <div class="principle-content">
+                            <h4>Trending Markets</h4>
+                            <p>POCs confirm trend legs. A trend that holds above prior-period POCs is healthy; failure to hold them signals exhaustion.</p>
+                        </div>
+                    </div>
+                    <div class="principle">
+                        <span class="principle-num">03</span>
+                        <div class="principle-content">
+                            <h4>Ranging Markets</h4>
+                            <p>POCs act as central magnets. Price oscillates around the POC; fades from the edges back toward POC are high-probability.</p>
+                        </div>
+                    </div>
+                    <div class="principle">
+                        <span class="principle-num">04</span>
+                        <div class="principle-content">
+                            <h4>Multi-Period Confluence</h4>
+                            <p>When a Monthly POC, Weekly POC, and Daily POC stack within a tight range, the level becomes a near-certain reaction zone.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ghost Levels Pro+ Features -->
+            <section id="ghost-pro" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge ghost-badge">Ghost Levels</span>
+                    <h1>Pro+ Features</h1>
+                </div>
+
+                <p class="lead">What makes the Pro+ version more accurate than free POC scripts and even TradingView's native Volume Profile.</p>
+
+                <h2>Volume Distribution Math</h2>
+                <p>Most POC indicators distribute each bar's volume evenly across the bins it touches (equal-split). This is mathematically inconsistent — a tight bar and a wide bar covering the same number of bins get the same per-bin weight, even though they represent vastly different price ranges.</p>
+
+                <table class="doc-table">
+                    <thead>
+                        <tr>
+                            <th>Method</th>
+                            <th>How It Works</th>
+                            <th>Accuracy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>LTF Closes</strong> <span class="ghost-tag">Default</span></td>
+                            <td>Pulls actual sub-bar candles via <code>request.security_lower_tf</code> and distributes each LTF bar's volume across its own H–L range</td>
+                            <td>Highest — uses observed intrabar behavior</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hi-Lo Proportional</strong></td>
+                            <td>Per-bin volume = bar volume × (bin width / bar range). Standard Market Profile math.</td>
+                            <td>Correct theoretical model — assumes uniform distribution</td>
+                        </tr>
+                        <tr>
+                            <td>Equal-split <span class="ghost-tag">free scripts</span></td>
+                            <td>Per-bin volume = bar volume / bins touched</td>
+                            <td>Lowest — ignores bar range proportions</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>What's in Pro+</h2>
+                <div class="setup-grid">
+                    <div class="setup-item">
+                        <h4>Naked POC Tracking</h4>
+                        <ul>
+                            <li>👻 Naked label per untouched POC</li>
+                            <li>Approach alerts (price within X% of POC)</li>
+                            <li>Mitigation alerts (first kiss)</li>
+                            <li>±Distance column in POC table</li>
+                        </ul>
+                    </div>
+                    <div class="setup-item">
+                        <h4>Real-Time Levels</h4>
+                        <ul>
+                            <li>Ongoing POC (live, current period)</li>
+                            <li>Secondary POC (2nd-highest bin)</li>
+                            <li>Value Area (VAH / VAL)</li>
+                            <li>Configurable VA % (default 67%)</li>
+                        </ul>
+                    </div>
+                    <div class="setup-item">
+                        <h4>Volume Profile Render</h4>
+                        <ul>
+                            <li>Current period + N past periods</li>
+                            <li>Gold POC bin highlight</li>
+                            <li>VA-tinted vs. outside-VA bins</li>
+                            <li>Smart-scaled width per period</li>
+                        </ul>
+                    </div>
+                    <div class="setup-item">
+                        <h4>Safety</h4>
+                        <ul>
+                            <li>TF guardrail table</li>
+                            <li>Bar-index error warnings</li>
+                            <li>Auto-fallback past LTF cap</li>
+                            <li>No fake order-flow features</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ghost Combo Signal -->
+            <section id="ghost-combo" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge ghost-badge">Ghost Levels</span>
+                    <h1>Combo Signal</h1>
+                </div>
+
+                <p class="lead">When an Ongoing POC enters approach distance of a Naked POC from a higher timeframe, treat it as a high-probability test zone.</p>
+
+                <div class="fill-logic">
+                    <div class="fill-row ghost-row">
+                        <div class="fill-inputs">
+                            <span class="fill-input">Naked POC <span class="ghost-symbol">&#128123;</span></span>
+                            <span class="fill-plus">+</span>
+                            <span class="fill-input">Approach &lt; 0.5%</span>
+                        </div>
+                        <span class="fill-equals">=</span>
+                        <div class="fill-result ghost-fill">
+                            <strong>ORANGE FILL</strong>
+                            <span>High-Probability POC Test</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout callout-info">
+                    <div class="callout-icon">i</div>
+                    <div class="callout-content">
+                        <strong>Why orange, not red</strong>
+                        <p>An orange fill signals <em>opportunity</em> — a POC test, not a directional command. Direction is determined by HTF bias (use MAV-HTF). Ghost Levels tells you <em>where</em>; the rest of the suite tells you <em>which way</em>.</p>
+                    </div>
+                </div>
+
+                <h2>Stacking with Maverick Suite</h2>
+                <ul class="doc-list">
+                    <li><strong>Ghost Levels</strong> identifies the level (POC test zone)</li>
+                    <li><strong>MAV-HTF</strong> tells you the bias (long-only or short-only)</li>
+                    <li><strong>MAV-E</strong> times the entry (pivot + divergence)</li>
+                    <li><strong>Slingshot Pro</strong> confirms the alignment (candle fill)</li>
+                </ul>
+            </section>
+
+            <!-- Ghost Confluence Detector -->
+            <section id="ghost-confluence" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge ghost-badge">Ghost Levels</span>
+                    <h1>Confluence Detector</h1>
+                </div>
+
+                <p class="lead">A companion indicator that reads up to 3 Ghost Levels Pro+ instances and flags clusters where Monthly + Weekly + Daily POCs stack together.</p>
+
+                <h2>Setup</h2>
+                <div class="steps">
+                    <div class="step">
+                        <span class="step-num">1</span>
+                        <div class="step-content">
+                            <h4>Add Pro+ three times</h4>
+                            <p>One instance per period — Monthly, Weekly, Daily. Rename each on the chart so you can tell them apart in the source dropdown.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">2</span>
+                        <div class="step-content">
+                            <h4>Add the Confluence Detector</h4>
+                            <p>Search "Ghost Confluence Detector" in TradingView indicators.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">3</span>
+                        <div class="step-content">
+                            <h4>Map sources per slot</h4>
+                            <p>For each Slot, set "Ongoing POC source" → Pro+ <code>Companion: Ongoing POC</code> plot, and "Naked POC source" → Pro+ <code>Companion: Naked POC #1</code> plot.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">4</span>
+                        <div class="step-content">
+                            <h4>Tune threshold</h4>
+                            <p>Default 0.5% clusters POCs within half a percent of each other. Tighter for index futures, looser for crypto.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout callout-warning">
+                    <div class="callout-icon">!</div>
+                    <div class="callout-content">
+                        <strong>Disable unused slots</strong>
+                        <p>Pine v6's <code>input.source</code> defaults to chart <code>close</code> when nothing is connected. The detector auto-rejects sources matching the live close to prevent phantom confluence — but you should still disable any Slot you haven't fully connected.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ghost Levels Literature -->
+            <section id="ghost-literature" class="doc-section">
+                <div class="section-header">
+                    <span class="section-badge ghost-badge">Ghost Levels</span>
+                    <h1>Key Literature</h1>
+                </div>
+
+                <p class="lead">The theory behind POC and Market Profile. These are the source texts.</p>
+
+                <ul class="doc-list ghost-literature">
+                    <li><strong>Steidlmayer, J.P. &amp; Hawkins, S.B.</strong> (2003). <em>Steidlmayer on Markets: Trading with Market Profile</em> (2nd ed.). Wiley. <span class="ghost-tag">Foundational</span></li>
+                    <li><strong>Dalton, J.F., Jones, E.T., &amp; Dalton, R.B.</strong> (2012). <em>Mind Over Markets: Power Trading with Market Generated Information</em>. Wiley.</li>
+                    <li><strong>Dalton, J.F., Dalton, R.B., &amp; Jones, E.T.</strong> (2007). <em>Markets in Profile: Profiting from the Auction Process</em>. Wiley.</li>
+                    <li><strong>Jardine, M.</strong> (2012). <em>Just a Trade a Day: Simple Ways to Profit from Predictable Market Moves</em>. Wiley Trading.</li>
+                </ul>
             </section>
 
             <!-- Methodology: Dow Theory -->
