@@ -1,6 +1,7 @@
 # Image library — keep folder local, only commit images actually referenced by the site
 images/*
 !images/ghost-levels-btc.png
+!images/maverick-radar-dashboard.png
 
 # Vastian subproject (separate concern)
 vastian/
